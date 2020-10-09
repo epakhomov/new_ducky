@@ -11,9 +11,9 @@ pipeline {
 
         stage('Code Checkout') {
             steps {
-                    {
+                    
         git 'https://github.com/epakhomov/new_ducky.git'
-    }
+    
             }
         }
 
