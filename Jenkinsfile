@@ -21,7 +21,7 @@ pipeline {
 
         stage('Build Deploy Code') {
             when {
-                branch 'davemeurer-patch-2'
+                branch 'davemeurer-patch-1'
             }
             steps {
                 echo 'RUNNING DETECT'
