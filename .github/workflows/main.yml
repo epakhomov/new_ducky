@@ -34,4 +34,4 @@ jobs:
       - name: Synopsys Detect
         uses: blackducksoftware/github-action@2.0.0
         with:
-          args: --blackduck.url=https://poc43.blackduck.synopsys.com --blackduck.api.token=
+          args: --blackduck.url=https://poc43.blackduck.synopsys.com --blackduck.api.token=${{ secrets.BLACK_DUCK_TOKEN}}
