@@ -44,9 +44,3 @@ jobs:
           wget -q ${{ secrets.POLARIS_SERVER_URL}}/api/tools/polaris_cli-linux64.zip
           unzip -j polaris_cli-linux64.zip -d /tmp
           /tmp/polaris analyze -w
-          
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-        # Path to SARIF file relative to the root of the repository
-         sarif_file: workflowengine-results.sarif.json    
