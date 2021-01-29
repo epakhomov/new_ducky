@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request
+# Controls when the action will run. Triggers the workflow on push or pull request d
 # events but only for the davemeurer-patch-1 branch
 on:
   push:
