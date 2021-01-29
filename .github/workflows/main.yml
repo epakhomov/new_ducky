@@ -27,14 +27,14 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      - name: Synopsys Detect
-        uses: blackducksoftware/github-action@2.0.0
-        with:
-          args: --blackduck.url=https://poc43.blackduck.synopsys.com --blackduck.api.token=${{ secrets.BLACK_DUCK_TOKEN}}
+      #- name: Run a multi-line script
+        #run: |
+         # echo Add other actions to build,
+          #echo test, and deploy your project.
+      #- name: Synopsys Detect
+       # uses: blackducksoftware/github-action@2.0.0
+        #with:
+         # args: --blackduck.url=https://poc43.blackduck.synopsys.com --blackduck.api.token=${{ secrets.BLACK_DUCK_TOKEN}}
           
       - name: Static Analysis with Polaris
         # if: ${{steps.prescription.outputs.sastScan == 'true' }}
