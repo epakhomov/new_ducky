@@ -16,6 +16,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1400.outputs.test }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -44,7 +46,7 @@ jobs:
           wget -q ${{ secrets.POLARIS_SERVER_URL}}/api/tools/polaris_cli-linux64.zip
           unzip -j polaris_cli-linux64.zip -d /tmp
           /tmp/polaris analyze -w
-    outputs: 
-      output1: ${{ steps.step1.outputs.test }}
-      run: echo "::set-output name=test::hello"
+      - id: step1400
+        run: echo "::set-output name=test::hello"
+ 
        
