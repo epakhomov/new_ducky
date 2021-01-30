@@ -50,6 +50,7 @@ jobs:
           /tmp/polaris analyze -w
           echo "::set-output name=test::BAR"
           echo ${{ steps.step1.outputs.test }}
+          shell: bash
           
  
  
