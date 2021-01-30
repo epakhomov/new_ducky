@@ -40,7 +40,7 @@ jobs:
          # args: --blackduck.url=https://poc43.blackduck.synopsys.com --blackduck.api.token=${{ secrets.BLACK_DUCK_TOKEN}}
           
       - name: Static Analysis with Polaris
-        if: ${{steps.prescription.outputs.sastScan == 'true' }}
+        #if: ${{steps.prescription.outputs.sastScan == 'true' }}
         id: step1
         run: |
           export POLARIS_SERVER_URL=${{ secrets.POLARIS_SERVER_URL}}
