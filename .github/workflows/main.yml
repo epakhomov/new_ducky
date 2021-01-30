@@ -47,6 +47,6 @@ jobs:
           unzip -j polaris_cli-linux64.zip -d /tmp
           /tmp/polaris analyze -w
       - id: step1400
-        run: echo "::set-output name=test::hello"
+        run: echo output1
  
        
