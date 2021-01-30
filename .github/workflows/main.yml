@@ -45,6 +45,6 @@ jobs:
           unzip -j polaris_cli-linux64.zip -d /tmp
           /tmp/polaris analyze -w
     outputs: 
-      output1: ${{ steps.step:4:1740 }}
+      output1: ${{ steps.step1.outputs.test }}
       run: echo "::set-output name=test::hello"
        
