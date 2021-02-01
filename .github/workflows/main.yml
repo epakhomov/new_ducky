@@ -51,8 +51,9 @@ jobs:
           /tmp/polaris analyze -w
       - id: set-json
         run: |
-         JSON=$(cat /home/runner/work/new_ducky/new_ducky/.synopsys/polaris/cli-scan.json)
-         echo "::set-output name=${JSON//'%'/'%25'}"
+         severity=$(cat /home/runner/work/new_ducky/new_ducky/.synopsys/polaris/cli-scan.json | jq '.issueSummary.issuesBySeverity.critical')
+         #echo "::set-output name=${JSON//'%'/'%25'}"
+         echo $severity
 
   
 
