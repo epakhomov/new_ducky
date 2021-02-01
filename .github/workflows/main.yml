@@ -17,6 +17,8 @@ jobs:
     # The type of runner that the job will run on
      runs-on: ubuntu-latest
     # runs-on: self-hosted
+     outputs:
+      json: ${{ steps.set-json.outputs.json }}
 
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -41,15 +43,18 @@ jobs:
           
       - name: Static Analysis with Polaris
         #if: ${{steps.prescription.outputs.sastScan == 'true' }}
-        id: step1
         run: |
           export POLARIS_SERVER_URL=${{ secrets.POLARIS_SERVER_URL}}
           export POLARIS_ACCESS_TOKEN=${{ secrets.POLARIS_ACCESS_TOKEN}}
           wget -q ${{ secrets.POLARIS_SERVER_URL}}/api/tools/polaris_cli-linux64.zip
           unzip -j polaris_cli-linux64.zip -d /tmp
           /tmp/polaris analyze -w
-          pwd
-          ls
+      - id: set-json
+        run: |
+         JSON=$(cat ./home/runner/work/new_ducky/new_ducky/.synopsys/polaris/cli-scan.json)
+         echo "::set-output name=${JSON//'%'/'%25'}"
+  
+
 
           
           
